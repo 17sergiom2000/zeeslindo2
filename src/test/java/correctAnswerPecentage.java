@@ -13,9 +13,9 @@ public class correctAnswerPecentage {
     /**
      * ID:  - válido
      * Input: -
-     * Expected Output: array with 3 questions
-     * Output: array with 3 questions
-     * Test result: PASSED
+     * Expected Output: 0.5
+     * Output: 0
+     * Test result: FAILED
      **/
     @org.junit.jupiter.api.Test
     public void TestingWithAllanswersCorrectforQuestionNumeric(){
@@ -23,18 +23,22 @@ public class correctAnswerPecentage {
         QuestionNumeric question1 = new QuestionNumeric(2.0, "Questão-1", "Quanto é 1+1?");
         QuestionNumeric question2 = new QuestionNumeric(4.0, "Questão-2", "Quanto é 2+2?");
         QuestionNumeric question3 = new QuestionNumeric(6.0, "Questão-3", "Quanto é 3+3?");
+        QuestionNumeric question4 = new QuestionNumeric(8.0, "Questão-3", "Quanto é 4+4?");
         try {
             test.addQuestion(question1);
             test.addQuestion(question2);
             test.addQuestion(question3);
-            question1.setUser_answer(2.0);
-            question2.setUser_answer(4.0);
-            question3.setUser_answer(6.0);
+            question1.setUser_answer(2.0); //certa
+            question2.setUser_answer(9.0); //errada
+            question3.setUser_answer(6.0); // certa
+            question4.setUser_answer(10.0); //errada
             question1.setDone(true);
             question2.setDone(true);
             question3.setDone(true);
-            Question[] array = {question1,question2,question3};
-            Assertions.assertArrayEquals(array, test.getTestStatistics().correctAnswers() );
+            question4.setDone(true);
+
+
+            Assertions.assertEquals(0.5,test.getTestStatistics().correctAnswerPecentage());
         } catch (TestException e) {
         }
     }

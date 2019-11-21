@@ -22,7 +22,7 @@ public class evaluateAnswer {
         ITest test = new Test();
         QuestionYesNo question3 = new QuestionYesNo("Questao yes or no?", "1 + 3 = 4 ?");
         question3.setCorrect_answer("Yes");
-        
+
           Assertions.assertThrows(QuestionException.class, question3::evaluateAnswer);
 
     }

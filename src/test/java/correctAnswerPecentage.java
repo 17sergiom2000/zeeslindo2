@@ -84,7 +84,7 @@ public class correctAnswerPecentage {
      * Input: -
      * Expected Output: 0.5
      * Output: 0.5
-     * Test result: PASSED
+     * Test result: FAILED
      **/
     @org.junit.jupiter.api.Test
     public void TestingWithAllHalfofTheQuestionCorrect(){

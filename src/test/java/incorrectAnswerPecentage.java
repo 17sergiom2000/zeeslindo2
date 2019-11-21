@@ -1,20 +1,17 @@
 import implementation.controller.Test;
-import implementation.models.Question;
-import implementation.models.QuestionMultipleChoice;
 import implementation.models.QuestionNumeric;
-import implementation.models.QuestionYesNo;
 import interfaces.controller.ITest;
 import interfaces.exceptions.TestException;
 import org.junit.jupiter.api.Assertions;
 
-public class correctAnswerPecentage {
+public class incorrectAnswerPecentage {
 
 
     /**
      * ID:  - válido
      * Input: -
-     * Expected Output: 1
-     * Output: 1
+     * Expected Output: 0
+     * Output: 0
      * Test result: PASSED
      **/
     @org.junit.jupiter.api.Test
@@ -39,7 +36,7 @@ public class correctAnswerPecentage {
             question4.setDone(true);
 
 
-            Assertions.assertEquals(1.0,test.getTestStatistics().correctAnswerPecentage());
+            Assertions.assertEquals(0,test.getTestStatistics().incorrectAnswerPecentage());
         } catch (TestException e) {
         }
     }
@@ -48,8 +45,8 @@ public class correctAnswerPecentage {
     /**
      * ID:  - válido
      * Input: -
-     * Expected Output: 0
-     * Output: 0
+     * Expected Output: 1
+     * Output: 1
      * Test result: PASSED
      **/
     @org.junit.jupiter.api.Test
@@ -74,7 +71,7 @@ public class correctAnswerPecentage {
             question4.setDone(true);
 
 
-            Assertions.assertEquals(0,test.getTestStatistics().correctAnswerPecentage());
+            Assertions.assertEquals(1.0,test.getTestStatistics().incorrectAnswerPecentage());
         } catch (TestException e) {
         }
     }
@@ -108,7 +105,7 @@ public class correctAnswerPecentage {
             question4.setDone(true);
 
 
-            Assertions.assertEquals(0.5,test.getTestStatistics().correctAnswerPecentage());
+            Assertions.assertEquals(0.5,test.getTestStatistics().incorrectAnswerPecentage());
         } catch (TestException e) {
         }
     }

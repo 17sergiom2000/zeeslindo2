@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+
+}
+
+group '31'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+    compile files("C:\\Users\\17kni\\Desktop\\Trabalho de ESI\\jar + data/ES2_TP1_1920.jar")
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
+}
